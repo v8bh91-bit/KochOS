@@ -26,7 +26,7 @@ jobs:
           docker run --rm --privileged \
             -e KOCH_NVIDIA=${{ inputs.nvidia && '1' || '0' }} \
             -v "$PWD":/work -w /work debian:trixie \
-            bash -c "apt-get update && apt-get install -y ca-certificates && bash build-koch-linux.sh"
+            bash -c "apt-get update && apt-get install -y ca-certificates && bash .github/workflows/build-koch-linux.sh"
 
       - name: Check result
         run: |
